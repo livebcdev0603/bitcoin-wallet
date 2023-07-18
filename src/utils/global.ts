@@ -1,13 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+    @font-face {
+        font-family: 'Roboto';
+        src: url(${require("../assets/fonts/Roboto-Bold.ttf")}) format('truetype');
+    }
+
     *, *::before, *::after {
         box-sizing: border-box;
     }
 
     body {
         margin: 0;
-        background-color: ${(props) => props.theme.colors.bgColor};
+        background-color: ${(props) => props.theme.colors.background};
     }
 
     a {
