@@ -16,7 +16,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderTitle = styled.p`
-  font-family: "Roboto", sans-serif;
   font-size: 108px;
-  color: #4c5968;
+  color: ${(props) => props.theme.colors.base};
 `;

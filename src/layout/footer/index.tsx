@@ -1,14 +1,24 @@
-import { FaWallet, FaBell, FaRegSun, FaCompass } from "react-icons/fa";
+import { useState } from "react";
 
 import * as S from "./footer.styled";
+import { footerData } from "utils/consts";
 
 const Footer = () => {
+  const [active, setActive] = useState("wallet");
+
   return (
     <S.FooterContainer>
-      <FaWallet />
-      <FaCompass />
-      <FaBell />
-      <FaRegSun />
+      {footerData.map((item) => {
+        return (
+          <S.FooterItem
+            key={item.symbol}
+            $flag={active === item.symbol}
+            onClick={() => setActive(item.symbol)}
+          >
+            <item.icon />
+          </S.FooterItem>
+        );
+      })}
     </S.FooterContainer>
   );
 };
