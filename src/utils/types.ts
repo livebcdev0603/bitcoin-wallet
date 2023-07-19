@@ -4,8 +4,17 @@ export interface HomeIntroProps {
   setIsExpanded: (isExpanded: boolean) => void;
 }
 
+export type IntroStyledProps = {
+  $isExpanded: HomeIntroProps["isExpanded"];
+};
+
 export interface HomeAnalysisProps {
   date: string | Date;
+  price: number;
+}
+
+export interface TokenPriceProps {
+  timestamp: number;
   price: number;
 }
 
@@ -13,10 +22,6 @@ export interface ModalProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
-
-export type IntroStyledProps = {
-  $isExpanded: HomeIntroProps["isExpanded"];
-};
 
 // layout types
 
@@ -35,6 +40,12 @@ export interface CoinProps {
   eColor: string;
 }
 
+export type CoinStyledProps = {
+  $icon?: CoinProps["icon"];
+  $sColor?: CoinProps["sColor"];
+  $eColor?: CoinProps["eColor"];
+};
+
 export interface CardProps {
   children?: React.ReactNode;
 }
@@ -44,6 +55,10 @@ export interface TagProps {
   text: string;
 }
 
+export type TagStyledProps = {
+  $color: TagProps["color"];
+};
+
 export interface FilterProps {
   color: string;
   text: string;
@@ -51,6 +66,11 @@ export interface FilterProps {
   flag: boolean;
   setFilter: (filter: number) => void;
 }
+
+export type FilterStyledProps = {
+  $color: FilterProps["color"];
+  $flag: FilterProps["flag"];
+};
 
 export interface LabelProps {
   fColor: string;
@@ -60,23 +80,12 @@ export interface LabelProps {
   flag?: boolean;
 }
 
-export type CoinStyledProps = {
-  $icon?: CoinProps["icon"];
-  $sColor?: CoinProps["sColor"];
-  $eColor?: CoinProps["eColor"];
-};
-
-export type TagStyledProps = {
-  $color: TagProps["color"];
-};
-
-export type FilterStyledProps = {
-  $color: FilterProps["color"];
-  $flag: FilterProps["flag"];
-};
-
 export type LabelStyledProps = {
   $fColor?: LabelProps["fColor"];
   $sColor?: LabelProps["sColor"];
   $flag?: LabelProps["flag"];
 };
+
+export interface CustomToolTipProps {
+  filter: number;
+}

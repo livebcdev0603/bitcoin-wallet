@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom";
 
 import * as S from "./modal.styled";
-import { ModalProps } from "utils/types";
 import { modalData } from "utils/consts";
+import { ModalProps } from "utils/types";
 
 const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
   return isOpen

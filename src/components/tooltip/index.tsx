@@ -6,15 +6,18 @@ import {
 
 import * as S from "./tooltip.styled";
 import { CurrencyFormatter } from "utils/functions";
+import { CustomToolTipProps } from "utils/types";
 
 const CustomToolTip = ({
+  filter,
   active,
   payload,
   label,
-}: TooltipProps<ValueType, NameType>) => {
+}: TooltipProps<ValueType, NameType> & CustomToolTipProps) => {
+  console.log(payload, label);
   return active ? (
     <S.CustomToolTipContainer>
-      <p>Date: {label}</p>
+      {filter === 1 ? <p>{label} hours ago</p> : <p>{label} days ago</p>}
       <p>Price: {CurrencyFormatter.format(Number(payload?.[0].value))}</p>
     </S.CustomToolTipContainer>
   ) : null;

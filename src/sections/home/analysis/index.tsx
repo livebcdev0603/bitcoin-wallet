@@ -1,10 +1,11 @@
 import { useState, useEffect, useMemo } from "react";
-import { Area, AreaChart, Tooltip, ResponsiveContainer } from "recharts";
+import { Area, AreaChart, Tooltip, ResponsiveContainer, XAxis } from "recharts";
 
 import C from "components";
 import * as S from "./analysis.styled";
-import { HomeAnalysisProps } from "utils/types";
+import { getMaxPrice, getMinPrice, getPriceChange } from "utils/functions";
 import { Currency, MARKET_CHART_ID, filterData } from "utils/consts";
+import { HomeAnalysisProps } from "utils/types";
 
 const Analysis = () => {
   const [filter, setFilter] = useState(1);
@@ -28,21 +29,17 @@ const Analysis = () => {
       try {
         const res = await fetchData;
         const result = res.prices.map((item: [number, number]) => ({
-          date: new Date(item[0]),
+          date: getPriceChange(item[0], filter),
           price: item[1],
         }));
         setChartData(result);
-        setLower(
-          Math.min(...result.map((item: HomeAnalysisProps) => item.price))
-        );
-        setHigher(
-          Math.max(...result.map((item: HomeAnalysisProps) => item.price))
-        );
+        setLower(getMinPrice(result));
+        setHigher(getMaxPrice(result));
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [fetchData]);
+  }, [fetchData, filter]);
 
   useEffect(() => {
     (async () => {
@@ -95,7 +92,8 @@ const Analysis = () => {
                   <stop offset="100%" stopColor="#ffc843" stopOpacity={1} />
                 </linearGradient>
               </defs>
-              <Tooltip content={C.CustomToolTip} />
+              <Tooltip content={<C.CustomToolTip filter={filter} />} />
+              <XAxis dataKey="date" height={0} />
               <Area
                 type="monotone"
                 dataKey="price"

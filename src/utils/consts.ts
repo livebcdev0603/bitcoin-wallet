@@ -6,6 +6,10 @@ import {
   CgRemove,
 } from "react-icons/cg";
 
+export const MARKET_CHART_ID = "bitcoin";
+
+export const Currency = "usd";
+
 export const filterData = [
   {
     symbol: "Day",
@@ -62,7 +66,3 @@ export const modalData = [
     icon: CgRemove,
   },
 ];
-
-export const MARKET_CHART_ID = "bitcoin";
-
-export const Currency = "usd";
