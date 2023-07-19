@@ -3,4 +3,6 @@ import Card from "./card";
 import Tag from "./tag";
 import Filter from "./filter";
 
-export { Coin, Card, Tag, Filter };
+const C = { Coin, Card, Tag, Filter };
+
+export default C;

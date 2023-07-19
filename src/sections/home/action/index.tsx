@@ -1,21 +1,21 @@
-import { Card, Coin } from "components";
+import C from "components";
 import * as S from "./action.styled";
 
 import Dollar from "assets/images/dollar.svg";
 
-const HomeAction = () => {
+const Action = () => {
   return (
     <S.ActionContainer>
-      <Card>
-        <Coin icon={Dollar} sColor="#1d72f1" eColor="#17c8fc" />
+      <C.Card>
+        <C.Coin icon={Dollar} sColor="#1d72f1" eColor="#17c8fc" />
         <p>Buy BTC</p>
-      </Card>
-      <Card>
-        <Coin icon={Dollar} sColor="#ff677c" eColor="#fb23a2" />
+      </C.Card>
+      <C.Card>
+        <C.Coin icon={Dollar} sColor="#ff677c" eColor="#fb23a2" />
         <p>Sell BTC</p>
-      </Card>
+      </C.Card>
     </S.ActionContainer>
   );
 };
 
-export default HomeAction;
+export default Action;

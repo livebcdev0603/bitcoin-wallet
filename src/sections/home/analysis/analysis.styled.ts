@@ -4,6 +4,7 @@ export const AnalysisContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: fit-content;
 `;
 
 export const FilterContainer = styled.div`
@@ -17,4 +18,7 @@ export const FilterContainer = styled.div`
   }
 `;
 
-export const ChatContainer = styled.div``;
+export const ChartContainer = styled.div`
+  position: relative;
+  margin: 0.75rem 0 1.625rem 0;
+`;

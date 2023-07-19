@@ -1,5 +1,7 @@
-import HomeIntro from "./intro";
-import HomeAnalysis from "./analysis";
-import HomeAction from "./action";
+import Intro from "./intro";
+import Analysis from "./analysis";
+import Action from "./action";
 
-export { HomeIntro, HomeAnalysis, HomeAction };
+const HomeSection = { Intro, Analysis, Action };
+
+export default HomeSection;

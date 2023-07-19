@@ -5,7 +5,7 @@ export interface HomeIntroProps {
 }
 
 export interface HomeAnalysisProps {
-  date: Date;
+  date: string | Date;
   price: number;
 }
 

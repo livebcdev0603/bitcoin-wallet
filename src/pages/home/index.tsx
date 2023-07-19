@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { HomeAction, HomeAnalysis, HomeIntro } from "sections/home";
+import HomeSection from "sections/home";
 import * as S from "./home.styled";
 
 const Home = () => {
@@ -8,10 +8,13 @@ const Home = () => {
 
   return (
     <S.HomeContainer>
-      <HomeIntro isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+      <HomeSection.Intro
+        isExpanded={isExpanded}
+        setIsExpanded={setIsExpanded}
+      />
       <S.Expanded $isExpanded={isExpanded}>
-        <HomeAnalysis />
-        <HomeAction />
+        <HomeSection.Analysis />
+        <HomeSection.Action />
       </S.Expanded>
     </S.HomeContainer>
   );
