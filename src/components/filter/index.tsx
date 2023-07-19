@@ -8,7 +8,7 @@ const Filter = ({ color, text, flag, setFilter }: FilterProps) => {
       $flag={flag}
       onClick={() => setFilter(text)}
     >
-      {text}
+      <p>{text}</p>
     </S.FilterContainer>
   );
 };

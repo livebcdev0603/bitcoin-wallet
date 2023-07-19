@@ -7,5 +7,5 @@ export const CardContainer = styled.div`
 
   width: 100%;
   background-color: ${(props) => props.theme.colors.primary};
-  border-radius: 50px;
+  border-radius: 1rem;
 `;

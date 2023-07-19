@@ -1,9 +1,12 @@
-import { IconType } from 'react-icons';
-
 // section types
 export interface HomeIntroProps {
   isExpanded: boolean;
   setIsExpanded: (isExpanded: boolean) => void;
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
 export type IntroStyledProps = {
@@ -11,6 +14,11 @@ export type IntroStyledProps = {
 };
 
 // layout types
+
+export interface HeaderStyeldProps {
+  $isOpen: boolean;
+}
+
 export interface FooterStyledProps {
   $flag: boolean;
 }

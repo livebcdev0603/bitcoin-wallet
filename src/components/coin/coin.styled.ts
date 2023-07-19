@@ -4,8 +4,8 @@ import { CoinStyledProps } from "utils/types";
 
 export const CoinContainer = styled.div<CoinStyledProps>`
   align-self: center;
-  width: 163px;
-  height: 163px;
+  width: 3rem;
+  height: 3rem;
   background: ${(props) =>
     "linear-gradient(90deg, " +
     props.$sColor +

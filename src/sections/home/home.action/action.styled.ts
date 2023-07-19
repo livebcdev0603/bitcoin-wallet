@@ -4,17 +4,27 @@ export const ActionContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 87px;
+  gap: 1.5rem;
 
   & > div {
-    padding-top: 85px;
-    padding-bottom: 85px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    gap: 1rem;
+
+    & > div {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
   }
 `;
 
-export const ActionText = styled.div`
-  margin-top: 54px;
-  font-size: 53px;
-  color: ${(props) => props.theme.colors.base};
-  text-align: center;
+export const ActionText = styled.p`
+  margin-top: 1rem;
+
+  @media screen and (max-width: 375px) {
+    margin-top: 0.75rem;
+  }
 `;

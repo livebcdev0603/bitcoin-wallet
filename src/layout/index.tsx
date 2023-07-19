@@ -5,15 +5,19 @@ import Header from "./header";
 import Footer from "./footer";
 
 const Wrapper = styled.div`
+  max-width: 425px;
+  margin: auto;
+  background-color: ${(props) => props.theme.colors.background};
+`;
+
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  max-width: 1445px;
-  margin: auto;
-  background-color: ${(props) => props.theme.colors.background};
-  
+  position: relative;
+
   & > * {
     width: 100%;
   }
@@ -22,9 +26,11 @@ const Wrapper = styled.div`
 const Layout = () => {
   return (
     <Wrapper>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Container id="main">
+        <Header />
+        <Outlet />
+        <Footer />
+      </Container>
     </Wrapper>
   );
 };

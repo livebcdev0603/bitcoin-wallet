@@ -9,5 +9,10 @@ export const AnalysisContainer = styled.div`
 export const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 42px 0;
+
+  margin: 0.75rem 0;
+
+  @media screen and (max-width: 375px) {
+    margin: 0.5rem 0;
+  }
 `;

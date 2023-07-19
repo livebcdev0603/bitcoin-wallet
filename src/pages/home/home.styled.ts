@@ -7,8 +7,12 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  padding: 90px;
+  padding: 1.625rem;
   background-color: ${(props) => props.theme.colors.background};
+
+  @media screen and (max-width: 375px) {
+    padding: 1.25rem;
+  }
 `;
 
 export const Expanded = styled.div<IntroStyledProps>`
@@ -19,5 +23,5 @@ export const Expanded = styled.div<IntroStyledProps>`
   overflow: hidden;
   opacity: ${(props) => (!props.$isExpanded ? "0" : "1")};
   height: ${(props) => (!props.$isExpanded ? "0" : "fit-content")};
-  transition: all 0.5s ease-out;
+  transition: all 0.5s ease-in-out;
 `;

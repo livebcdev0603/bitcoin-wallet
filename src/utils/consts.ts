@@ -1,4 +1,10 @@
 import { FaWallet, FaBell, FaRegSun, FaCompass } from "react-icons/fa";
+import {
+  CgEditFlipH,
+  CgInfo,
+  CgSoftwareUpload,
+  CgRemove,
+} from "react-icons/cg";
 
 export const filterData = [
   {
@@ -23,21 +29,36 @@ export const footerData = [
   {
     symbol: "wallet",
     icon: FaWallet,
-    link: "/",
   },
   {
     symbol: "compass",
     icon: FaCompass,
-    link: "/",
   },
   {
     symbol: "bell",
     icon: FaBell,
-    link: "/",
   },
   {
     symbol: "setting",
     icon: FaRegSun,
-    link: "/",
+  },
+];
+
+export const modalData = [
+  {
+    text: "Edit",
+    icon: CgEditFlipH,
+  },
+  {
+    text: "Courier info",
+    icon: CgInfo,
+  },
+  {
+    text: "Share",
+    icon: CgSoftwareUpload,
+  },
+  {
+    text: "Remove",
+    icon: CgRemove,
   },
 ];

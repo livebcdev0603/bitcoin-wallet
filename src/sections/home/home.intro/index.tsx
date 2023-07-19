@@ -13,7 +13,7 @@ const HomeIntro = ({ isExpanded, setIsExpanded }: HomeIntroProps) => {
         <S.IntroCoin>
           <S.IntroCoinShape>
             <Coin icon={Bitcoin} sColor="#ffc843" eColor="#ff8f17" />
-            <S.IntroCoinName>Bitcoin</S.IntroCoinName>
+            <p>Bitcoin</p>
           </S.IntroCoinShape>
           <S.IntroCoinSymbol>BTC</S.IntroCoinSymbol>
         </S.IntroCoin>
