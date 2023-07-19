@@ -1,5 +1,5 @@
-import HomeIntro from "./home.intro";
-import HomeAnalysis from "./home.analysis";
-import HomeAction from "./home.action";
+import HomeIntro from "./intro";
+import HomeAnalysis from "./analysis";
+import HomeAction from "./action";
 
 export { HomeIntro, HomeAnalysis, HomeAction };
