@@ -6,6 +6,6 @@ export const CardContainer = styled.div`
   justify-content: center;
 
   width: 100%;
-  background-color: ${(props) => props.theme.colors.primary};
   border-radius: 1rem;
+  background-color: ${(props) => props.theme.colors.primary};
 `;

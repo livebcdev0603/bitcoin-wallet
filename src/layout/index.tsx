@@ -7,6 +7,8 @@ import Footer from "./footer";
 const Wrapper = styled.div`
   max-width: 425px;
   margin: auto;
+  border: ${(props) => "1px solid" + props.theme.colors.primary};
+  border-radius: 2rem;
   background-color: ${(props) => props.theme.colors.background};
 `;
 

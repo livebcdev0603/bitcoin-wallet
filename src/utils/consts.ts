@@ -62,3 +62,5 @@ export const modalData = [
     icon: CgRemove,
   },
 ];
+
+export const MARKET_CHART_ID = "bitcoin";

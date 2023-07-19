@@ -8,6 +8,8 @@ export const HeaderContainer = styled.div`
   align-items: center;
 
   padding: 1.75rem 2.25rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   background-color: ${(props) => props.theme.colors.primary};
 
   @media screen and (max-width: 375px) {

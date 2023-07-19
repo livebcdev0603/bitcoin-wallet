@@ -16,3 +16,5 @@ export const FilterContainer = styled.div`
     margin: 0.5rem 0;
   }
 `;
+
+export const ChatContainer = styled.div``;

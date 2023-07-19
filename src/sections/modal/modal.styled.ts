@@ -8,14 +8,17 @@ export const ModalWrapper = styled.div`
 
 export const ModalContainer = styled.div`
   position: relative;
+  width: 100%;
+  height: 100%;
 `;
 
 export const ModalShadow = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
   background: rgba(0, 0, 0, 0.7);
   z-index: 5;
 `;
@@ -31,6 +34,10 @@ export const ModalContent = styled.div`
 
   & > :not(:last-child) {
     border-bottom: ${(props) => "1px solid" + props.theme.colors.base};
+  }
+
+  @media screen and (max-width: 375px) {
+    top: 3.5rem;
   }
 `;
 

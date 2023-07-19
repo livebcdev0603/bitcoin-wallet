@@ -4,6 +4,11 @@ export interface HomeIntroProps {
   setIsExpanded: (isExpanded: boolean) => void;
 }
 
+export interface HomeAnalysisProps {
+  date: Date;
+  price: number;
+}
+
 export interface ModalProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
@@ -42,8 +47,9 @@ export interface TagProps {
 export interface FilterProps {
   color: string;
   text: string;
+  count: number;
   flag: boolean;
-  setFilter: (filter: string) => void;
+  setFilter: (filter: number) => void;
 }
 
 export type CoinStyledProps = {

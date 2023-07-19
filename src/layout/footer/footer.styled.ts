@@ -5,7 +5,10 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 1.25rem 3.25rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
   background-color: ${(props) => props.theme.colors.primary};
 
   @media screen and (max-width: 375px) {

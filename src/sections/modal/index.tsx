@@ -18,7 +18,10 @@ const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
               >
                 {modalData.map((item) => {
                   return (
-                    <S.ModalItem key={item.text}>
+                    <S.ModalItem
+                      key={item.text}
+                      onClick={() => setIsOpen(false)}
+                    >
                       <S.ModalItemText>{item.text}</S.ModalItemText>
                       <item.icon />
                     </S.ModalItem>
