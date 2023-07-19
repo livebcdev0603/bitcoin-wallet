@@ -52,6 +52,14 @@ export interface FilterProps {
   setFilter: (filter: number) => void;
 }
 
+export interface LabelProps {
+  fColor: string;
+  sColor?: string;
+  label: string;
+  price: number;
+  flag?: boolean;
+}
+
 export type CoinStyledProps = {
   $icon?: CoinProps["icon"];
   $sColor?: CoinProps["sColor"];
@@ -65,4 +73,10 @@ export type TagStyledProps = {
 export type FilterStyledProps = {
   $color: FilterProps["color"];
   $flag: FilterProps["flag"];
+};
+
+export type LabelStyledProps = {
+  $fColor?: LabelProps["fColor"];
+  $sColor?: LabelProps["sColor"];
+  $flag?: LabelProps["flag"];
 };

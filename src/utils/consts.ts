@@ -64,3 +64,5 @@ export const modalData = [
 ];
 
 export const MARKET_CHART_ID = "bitcoin";
+
+export const Currency = "usd";

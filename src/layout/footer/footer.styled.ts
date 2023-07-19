@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { FooterStyledProps } from "utils/types";
 
 export const FooterContainer = styled.div`
