@@ -3,7 +3,7 @@ import { Area, AreaChart, Tooltip, ResponsiveContainer, XAxis } from "recharts";
 
 import C from "components";
 import * as S from "./analysis.styled";
-import { getMaxPrice, getMinPrice, getPriceChange } from "utils/functions";
+import { generateDateTime, getMaxPrice, getMinPrice } from "utils/functions";
 import { Currency, MARKET_CHART_ID } from "utils/consts";
 import { HomeAnalysisProps, ChartDataProps } from "utils/types";
 
@@ -27,13 +27,16 @@ const Analysis = ({ filter }: HomeAnalysisProps) => {
     (async () => {
       try {
         const res = await fetchData;
-        const result = res.prices.map((item: [number, number]) => ({
-          date: getPriceChange(item[0], filter),
-          price: item[1],
-        }));
+        const result = res.prices
+          .slice(0, -1)
+          .map((item: [number, number]) => ({
+            date: generateDateTime(item[0], filter),
+            price: item[1],
+          }));
         setChartData(result);
         setLower(getMinPrice(result));
         setHigher(getMaxPrice(result));
+        console.log(res);
       } catch (error) {
         console.log(error);
       }

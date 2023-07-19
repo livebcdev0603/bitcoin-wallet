@@ -16,7 +16,7 @@ const CustomToolTip = ({
 }: TooltipProps<ValueType, NameType> & CustomToolTipProps) => {
   return active ? (
     <S.CustomToolTipContainer>
-      {filter === 1 ? <p>{label} hours ago</p> : <p>{label} days ago</p>}
+      {filter === 1 ? <p>Time: {label}</p> : <p>Day: {label}</p>}
       <p>Price: {CurrencyFormatter.format(Number(payload?.[0].value))}</p>
     </S.CustomToolTipContainer>
   ) : null;

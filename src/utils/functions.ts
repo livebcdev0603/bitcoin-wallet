@@ -14,35 +14,14 @@ export const getMaxPrice = (arr: ChartDataProps[]) => {
   return Math.min(...arr.map((item) => item.price));
 };
 
-export const getPriceChange = (timestamp: number, filter: number) => {
-  const time = new Date().getHours() - new Date(timestamp).getHours();
-  const date = new Date().getDay() - new Date(timestamp).getDay();
-
-  switch (filter) {
-    case 1:
-      if (time < 0) {
-        return Math.abs(24 - time);
-      }
-      return time;
-    case 7:
-      if (date < 0) {
-        return Math.abs(7 - date);
-      }
-      return date;
-    case 30:
-      if (date < 0) {
-        return Math.abs(30 - date);
-      }
-      return date;
-    case 365:
-      if (date < 0) {
-        return Math.abs(365 - date);
-      }
-      return date;
-    default:
-      if (time < 0) {
-        return Math.abs(24 - time);
-      }
-      return time;
+export const generateDateTime = (timestamp: number, filter: number) => {
+  const date = new Date(timestamp);
+  if (filter === 1) {
+    return date.toLocaleString();
+  } else {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${year}-${month}-${day}`;
   }
 };
