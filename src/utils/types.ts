@@ -8,7 +8,16 @@ export type IntroStyledProps = {
   $isExpanded: HomeIntroProps["isExpanded"];
 };
 
+export interface HomeFilterProps {
+  filter: number;
+  setFilter: (filter: number) => void;
+}
+
 export interface HomeAnalysisProps {
+  filter: number;
+}
+
+export interface ChartDataProps {
   date: string | Date;
   price: number;
 }

@@ -1,4 +1,4 @@
-import { HomeAnalysisProps } from "./types";
+import { ChartDataProps } from "./types";
 
 export const CurrencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -6,11 +6,11 @@ export const CurrencyFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
 });
 
-export const getMinPrice = (arr: HomeAnalysisProps[]) => {
+export const getMinPrice = (arr: ChartDataProps[]) => {
   return Math.min(...arr.map((item) => item.price));
 };
 
-export const getMaxPrice = (arr: HomeAnalysisProps[]) => {
+export const getMaxPrice = (arr: ChartDataProps[]) => {
   return Math.min(...arr.map((item) => item.price));
 };
 

@@ -4,12 +4,11 @@ import { Area, AreaChart, Tooltip, ResponsiveContainer, XAxis } from "recharts";
 import C from "components";
 import * as S from "./analysis.styled";
 import { getMaxPrice, getMinPrice, getPriceChange } from "utils/functions";
-import { Currency, MARKET_CHART_ID, filterData } from "utils/consts";
-import { HomeAnalysisProps } from "utils/types";
+import { Currency, MARKET_CHART_ID } from "utils/consts";
+import { HomeAnalysisProps, ChartDataProps } from "utils/types";
 
-const Analysis = () => {
-  const [filter, setFilter] = useState(1);
-  const [chartData, setChartData] = useState<HomeAnalysisProps[]>();
+const Analysis = ({ filter }: HomeAnalysisProps) => {
+  const [chartData, setChartData] = useState<ChartDataProps[]>();
   const [price, setPrice] = useState(0);
   const [lower, setLower] = useState(0);
   const [higher, setHigher] = useState(0);
@@ -56,55 +55,39 @@ const Analysis = () => {
 
   return (
     <S.AnalysisContainer>
-      <S.FilterContainer>
-        {filterData.map((item) => {
-          return (
-            <C.Filter
-              key={item.symbol}
-              color="#aeb8c4"
-              text={item.symbol}
-              count={item.count}
-              flag={filter === item.count}
-              setFilter={setFilter}
+      <C.Card>
+        <S.Labels>
+          <C.Label fColor="#ee225d" label="Lower: " price={lower} flag />
+          <C.Label fColor="#1ec070" label="Higher: " price={higher} flag />
+        </S.Labels>
+        <S.Price>
+          <C.Label
+            fColor="linear-gradient(90deg, #ff8f17 0%, #ffc843 100%)"
+            sColor="#ffe9c0"
+            label="1BTC="
+            price={price}
+          />
+        </S.Price>
+        <ResponsiveContainer width={"100%"} height={150}>
+          <AreaChart data={chartData}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#ff8f17" stopOpacity={1} />
+                <stop offset="100%" stopColor="#ffc843" stopOpacity={1} />
+              </linearGradient>
+            </defs>
+            <Tooltip content={<C.CustomToolTip filter={filter} />} />
+            <XAxis dataKey="date" height={0} />
+            <Area
+              type="monotone"
+              dataKey="price"
+              stroke="url(#colorUv)"
+              strokeWidth={5}
+              fill="#FFF7EE"
             />
-          );
-        })}
-      </S.FilterContainer>
-      <S.ChartContainer>
-        <C.Card>
-          <S.Labels>
-            <C.Label fColor="#ee225d" label="Lower: " price={lower} flag />
-            <C.Label fColor="#1ec070" label="Higher: " price={higher} flag />
-          </S.Labels>
-          <S.Price>
-            <C.Label
-              fColor="linear-gradient(90deg, #ff8f17 0%, #ffc843 100%)"
-              sColor="#ffe9c0"
-              label="1BTC="
-              price={price}
-            />
-          </S.Price>
-          <ResponsiveContainer width={"100%"} height={150}>
-            <AreaChart data={chartData}>
-              <defs>
-                <linearGradient id="colorUv" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#ff8f17" stopOpacity={1} />
-                  <stop offset="100%" stopColor="#ffc843" stopOpacity={1} />
-                </linearGradient>
-              </defs>
-              <Tooltip content={<C.CustomToolTip filter={filter} />} />
-              <XAxis dataKey="date" height={0} />
-              <Area
-                type="monotone"
-                dataKey="price"
-                stroke="url(#colorUv)"
-                strokeWidth={5}
-                fill="#FFF7EE"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </C.Card>
-      </S.ChartContainer>
+          </AreaChart>
+        </ResponsiveContainer>
+      </C.Card>
     </S.AnalysisContainer>
   );
 };
