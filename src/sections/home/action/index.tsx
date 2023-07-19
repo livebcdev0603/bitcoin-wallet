@@ -8,11 +8,11 @@ const HomeAction = () => {
     <S.ActionContainer>
       <Card>
         <Coin icon={Dollar} sColor="#1d72f1" eColor="#17c8fc" />
-        <S.ActionText>Buy BTC</S.ActionText>
+        <p>Buy BTC</p>
       </Card>
       <Card>
         <Coin icon={Dollar} sColor="#ff677c" eColor="#fb23a2" />
-        <S.ActionText>Sell BTC</S.ActionText>
+        <p>Sell BTC</p>
       </Card>
     </S.ActionContainer>
   );
