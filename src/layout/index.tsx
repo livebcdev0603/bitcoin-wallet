@@ -15,14 +15,15 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 
   position: relative;
+  height: 100vh;
+`;
 
-  & > * {
-    width: 100%;
-  }
+export const Content = styled.div`
+  height: 100%;
+  overflow-y: auto;
 `;
 
 const Layout = () => {
@@ -30,7 +31,9 @@ const Layout = () => {
     <Wrapper>
       <Container id="main">
         <Header />
-        <Outlet />
+        <Content>
+          <Outlet />
+        </Content>
         <Footer />
       </Container>
     </Wrapper>

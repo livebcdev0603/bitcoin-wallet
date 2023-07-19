@@ -14,7 +14,6 @@ const CustomToolTip = ({
   payload,
   label,
 }: TooltipProps<ValueType, NameType> & CustomToolTipProps) => {
-  console.log(payload, label);
   return active ? (
     <S.CustomToolTipContainer>
       {filter === 1 ? <p>{label} hours ago</p> : <p>{label} days ago</p>}
