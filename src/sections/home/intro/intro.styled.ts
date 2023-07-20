@@ -47,6 +47,7 @@ export const IntroCoinSymbol = styled.p`
 
 export const IntroAmount = styled.div`
   font-size: ${(props) => props.theme.fonts.size.large.lg};
+  color: ${(props) => props.theme.colors.base};
 
   @media screen and (max-width: 375px) {
     font-size: ${(props) => props.theme.fonts.size.large.sm};
