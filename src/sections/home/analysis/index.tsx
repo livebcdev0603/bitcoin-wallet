@@ -36,7 +36,6 @@ const Analysis = ({ filter }: HomeAnalysisProps) => {
         setChartData(result);
         setLower(getMinPrice(result));
         setHigher(getMaxPrice(result));
-        console.log(res);
       } catch (error) {
         console.log(error);
       }
