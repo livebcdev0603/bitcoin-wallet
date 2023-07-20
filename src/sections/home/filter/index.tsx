@@ -1,12 +1,12 @@
 import C from "components";
 import * as S from "./filter.styled";
-import { filterData } from "utils/consts";
+import { FILTER_DATA } from "utils/consts";
 import { HomeFilterProps } from "utils/types";
 
 const Filter = ({ filter, setFilter }: HomeFilterProps) => {
   return (
     <S.FilterContainer>
-      {filterData.map((item) => {
+      {FILTER_DATA.map((item) => {
         return (
           <C.Filter
             key={item.symbol}

@@ -8,9 +8,9 @@ import {
 
 export const MARKET_CHART_ID = "bitcoin";
 
-export const Currency = "usd";
+export const CURRENCY_UNIT = "usd";
 
-export const filterData = [
+export const FILTER_DATA = [
   {
     symbol: "Day",
     count: 1,
@@ -29,7 +29,7 @@ export const filterData = [
   },
 ];
 
-export const footerData = [
+export const FOOTER_DATA = [
   {
     symbol: "wallet",
     icon: FaWallet,
@@ -48,7 +48,7 @@ export const footerData = [
   },
 ];
 
-export const modalData = [
+export const MODAL_DATA = [
   {
     text: "Edit",
     icon: CgEditFlipH,

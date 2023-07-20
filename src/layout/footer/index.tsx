@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 import * as S from "./footer.styled";
-import { footerData } from "utils/consts";
+import { FOOTER_DATA } from "utils/consts";
 
 const Footer = () => {
   const [active, setActive] = useState("wallet");
 
   return (
     <S.FooterContainer>
-      {footerData.map((item) => {
+      {FOOTER_DATA.map((item) => {
         return (
           <S.FooterItem
             key={item.symbol}

@@ -4,7 +4,7 @@ import { Area, AreaChart, Tooltip, ResponsiveContainer, XAxis } from "recharts";
 import C from "components";
 import * as S from "./analysis.styled";
 import { generateDateTime, getMaxPrice, getMinPrice } from "utils/functions";
-import { Currency, MARKET_CHART_ID } from "utils/consts";
+import { CURRENCY_UNIT, MARKET_CHART_ID } from "utils/consts";
 import { HomeAnalysisProps, ChartDataProps } from "utils/types";
 
 const Analysis = ({ filter }: HomeAnalysisProps) => {
@@ -17,7 +17,7 @@ const Analysis = ({ filter }: HomeAnalysisProps) => {
     const interval = filter === 1 ? "hourly" : "daily";
 
     return fetch(
-      `https://api.coingecko.com/api/v3/coins/${MARKET_CHART_ID}/market_chart?vs_currency=${Currency}&days=${filter}&interval=${interval}`
+      `https://api.coingecko.com/api/v3/coins/${MARKET_CHART_ID}/market_chart?vs_currency=${CURRENCY_UNIT}&days=${filter}&interval=${interval}`
     ).then((res) => {
       return res.json();
     });
@@ -47,7 +47,7 @@ const Analysis = ({ filter }: HomeAnalysisProps) => {
     (async () => {
       try {
         const result = await fetch(
-          `https://api.coingecko.com/api/v3/simple/price?ids=${MARKET_CHART_ID}&vs_currencies=${Currency}`
+          `https://api.coingecko.com/api/v3/simple/price?ids=${MARKET_CHART_ID}&vs_currencies=${CURRENCY_UNIT}`
         ).then((res) => res.json());
         setPrice(result.bitcoin.usd);
       } catch (error) {

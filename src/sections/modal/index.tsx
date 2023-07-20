@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 
 import * as S from "./modal.styled";
-import { modalData } from "utils/consts";
+import { MODAL_DATA } from "utils/consts";
 import { ModalProps } from "utils/types";
 
 const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
@@ -16,7 +16,7 @@ const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
                   e.stopPropagation();
                 }}
               >
-                {modalData.map((item) => {
+                {MODAL_DATA.map((item) => {
                   return (
                     <S.ModalItem
                       key={item.text}
