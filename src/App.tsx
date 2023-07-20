@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "layout/index";
-import Page from "pages/index";
+import Layout from "layout";
+import Page from "pages";
 import GlobalStyles from "utils/global";
 import theme from "utils/theme";
 
