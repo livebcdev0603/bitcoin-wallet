@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export const ModalWrapper = styled.div`
+import { ModalStyledProps } from "utils/types";
+
+export const ModalWrapper = styled.div<ModalStyledProps>`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: ${(props) => (!props.$isOpen ? "0" : "100%")};
+  transition: none;
 `;
 
 export const ModalContainer = styled.div`
@@ -23,13 +26,19 @@ export const ModalShadow = styled.div`
   z-index: 5;
 `;
 
-export const ModalContent = styled.div`
-  width: 50%;
+export const ModalContent = styled.div<ModalStyledProps>`
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
   position: absolute;
+  width: 50%;
+  height: ${(props) => (!props.$isOpen ? "0" : "25%")};
   top: 5rem;
   right: 1rem;
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1rem;
+  overflow: hidden;
   z-index: 10;
 
   & > :not(:last-child) {

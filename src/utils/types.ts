@@ -32,6 +32,10 @@ export interface ModalProps {
   setIsOpen: (isOpen: boolean) => void;
 }
 
+export type ModalStyledProps = {
+  $isOpen: ModalProps["isOpen"];
+};
+
 // layout types
 
 export interface HeaderStyeldProps {
