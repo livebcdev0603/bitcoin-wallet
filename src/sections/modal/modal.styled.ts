@@ -42,7 +42,7 @@ export const ModalContent = styled.div<ModalStyledProps>`
   z-index: 10;
 
   & > :not(:last-child) {
-    border-bottom: ${(props) => "1px solid" + props.theme.colors.base};
+    border-bottom: ${(props) => "1px solid" + props.theme.colors.gray};
   }
 
   @media screen and (max-width: 375px) {
