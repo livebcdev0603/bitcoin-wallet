@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import HomeSection from "sections/home";
+import HomeView from "views/home";
 import * as S from "./home.styled";
 
 const Home = () => {
@@ -9,15 +9,15 @@ const Home = () => {
 
   return (
     <S.HomeContainer>
-      <HomeSection.Intro
+      <HomeView.Intro
         isExpanded={isExpanded}
         setIsExpanded={setIsExpanded}
       />
       <S.Expanded $isExpanded={isExpanded}>
-        <HomeSection.Filter filter={filter} setFilter={setFilter} />
+        <HomeView.Filter filter={filter} setFilter={setFilter} />
       </S.Expanded>
-      <HomeSection.Analysis filter={filter} />
-      <HomeSection.Action />
+      <HomeView.Analysis filter={filter} />
+      <HomeView.Action />
     </S.HomeContainer>
   );
 };

@@ -1,4 +1,4 @@
-// section types
+// views types
 export interface HomeIntroProps {
   isExpanded: boolean;
   setIsExpanded: (isExpanded: boolean) => void;
@@ -36,7 +36,7 @@ export type ModalStyledProps = {
   $isOpen: ModalProps["isOpen"];
 };
 
-// layout types
+// layouts types
 
 export interface HeaderStyeldProps {
   $isOpen: boolean;
@@ -46,7 +46,7 @@ export interface FooterStyledProps {
   $flag: boolean;
 }
 
-// componnet types
+// componnets types
 export interface CoinProps {
   icon: string;
   sColor: string;

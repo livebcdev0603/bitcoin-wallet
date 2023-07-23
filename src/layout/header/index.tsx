@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowBack, IoMdMore } from "react-icons/io";
 
-import Modal from "sections/modal";
+import Modal from "views/modal";
 import * as S from "./header.styled";
 
 const Header = () => {
